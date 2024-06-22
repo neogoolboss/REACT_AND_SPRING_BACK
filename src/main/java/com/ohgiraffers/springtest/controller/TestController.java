@@ -14,9 +14,9 @@ public class TestController {
         return "컨트롤러 테스트";
     }
 
-    @GetMapping("/showMe")
+    @GetMapping("/mypage")
     public List<String> hello() {
 
-        return Arrays.asList("첫번째", "두번째", "세번째");
+        return Arrays.asList("테스트", "테스트2", "세번째");
     }
 }
