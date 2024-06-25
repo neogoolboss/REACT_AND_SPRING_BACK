@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.springtest.mypage.model.dao.MyPageMapper">
+
+    <resultMap id="memberResultMap" type="com.ohgiraffers.springtest.mypage.model.dto.MemberDTO">
+        <id property="memberId" column="MEMBER_ID"/>
+        <result property="email" column="EMAIL"/>
+        <result property="nickname" column="NICKNAME"/>
+        <result property="gender" column="GENDER"/>
+        <result property="profile" column="PROFILE"/>
+        <result property="introduce" column="INTRODUCE"/>
+        <result property="memberRole" column="MEMBER_ROLE"/>
+        <result property="signupAt" column="SIGNUP_AT"/>
+        <result property="signupPlatform" column="SIGNUP_PLATFORM"/>
+    </resultMap>
+
+    <select id="findAllMembers" resultMap="memberResultMap">
+        SELECT
+               MEMBER_ID,
+               EMAIL,
+               NICKNAME,
+               GENDER,
+               PROFILE,
+               INTRODUCE,
+               MEMBER_ROLE,
+               SIGNUP_AT,
+               SIGNUP_PLATFORM
+          FROM `MEMBER`
+    </select>
+
+</mapper>
